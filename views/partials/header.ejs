@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Users</title>
+  <title><%= title %></title>
   <link rel="stylesheet" href="stylesheets/style.css" />
 </head>
 
@@ -10,13 +10,19 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <a href="" class="brand-logo left">Users</a>
+        <a href="/" class="brand-logo left">Users</a>
         <ul class="right">
           <li>
           <% if (user) { %>
             <a href="/auth/logout">Log Out</a>
           <li class="nav-item">
-            <a clas="nav-link" href="users/profile">My Profile</a>
+            <a class="nav-link" href="/users/profile">My Profile</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/users">All Users</a>
+          </li>
+          <li class="nav-link">
+              <a class="nav=item" href="/seasons">All Seasons</a>
           </li>
           <% } else { %>
             <a href="/auth/google">Login with Google</a>
