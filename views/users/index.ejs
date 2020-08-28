@@ -15,6 +15,9 @@
           <li>
           <% if (user) { %>
             <a href="/auth/logout">Log Out</a>
+          <li class="nav-item">
+            <a clas="nav-link" href="users/profile">My Profile</a>
+          </li>
           <% } else { %>
             <a href="/auth/google">Login with Google</a>
           <% } %>
