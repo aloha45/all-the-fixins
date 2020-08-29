@@ -6,6 +6,8 @@ module.exports = {
 
 function index(req, res) {
     Season.find({}).then((seasons) => {
-        res.render('seasons/index', { title: 'Season Index', seasons})
+        res.render('seasons/index', { title: 'Season Index',
+        user: req.user, 
+        seasons})
     })
 }
