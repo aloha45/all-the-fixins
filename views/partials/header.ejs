@@ -3,9 +3,8 @@
 
 <head>
   <title><%= title %></title>
-  <link rel="stylesheet" href="stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-
 <body>
   <div class="navbar-fixed">
     <nav>
@@ -23,6 +22,9 @@
           </li>
           <li class="nav-link">
               <a class="nav=item" href="/seasons">All Seasons</a>
+          </li>
+          <li class="nav-item">
+            <img id="avatarPhoto" height="50" src="<%= user.avatar %>" alt="">
           </li>
           <% } else { %>
             <a href="/auth/google">Login with Google</a>
