@@ -7,8 +7,6 @@ var mongoose = require('mongoose');
 //   console.log(`Mongoose connected to: ${process.env.DATABASE_URL}`);
 // });
 
-// module.exports = mongoose;
-
 mongoose.connect('mongodb://localhost:27017/seasons',{
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -20,3 +18,6 @@ const db = mongoose.connection;
 db.on('connected', () => {
     console.log(`Connected to MongoDB at ${db.host}:${db.port}`)
 });
+
+
+module.exports = mongoose;
