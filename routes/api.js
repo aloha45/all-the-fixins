@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const seasonsCtrl = require('../controllers/seasons')
+const seasonsCtrl = require('../controllers/api/seasons')
 
 router.get('/seasons', seasonsCtrl.index);
 router.get('/seasons/:id', seasonsCtrl.show);

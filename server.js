@@ -7,6 +7,7 @@ const passport = require('passport');
 
 
 // load the env vars
+require('./config/database')
 require('dotenv').config();
 
 // create the Express app
@@ -21,7 +22,7 @@ const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const seasonsRouter = require('./routes/seasons');
-const season = require('./models/season');
+const apiRouter = require('./routes/api')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,6 +47,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/seasons', seasonsRouter);
+app.use('/api', apiRouter);
 
 // invalid request, send 404 page
 app.use(function(req, res) {

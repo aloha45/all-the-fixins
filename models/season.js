@@ -2,11 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const seasonSchema = new Schema({
+    name: String,
+    season: Number,
     winner: String,
     runnerUp: String,
     finalJuryMember: String,
     firstOneOut: String,
-    airDate: Date,
+    airDate: String,
     memorableMoment: String,
     returningPlayers: String,
     seasonImg: String,
