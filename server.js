@@ -7,7 +7,6 @@ const passport = require('passport');
 
 
 // load the env vars
-require('./config/database')
 require('dotenv').config();
 
 // create the Express app

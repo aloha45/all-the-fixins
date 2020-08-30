@@ -9,21 +9,19 @@ module.exports = {
 }
 
 function index (req, res) {
-    Season.find({}, (seasons) => {
-        console.log(seasons)
+    Season.find({}, (err, seasons) => {
         res.status(200).json(seasons)
     })
 }
 
 function show (req, res) {
-    Season.findById(req.params.id, (season) => {
+    Season.findById(req.params.id, (err, season) => {
         res.status(200).json(season)
     })
 }
 
 function create (req, res) {
-    Season.create(req.body, (season) => {
-        console.log(season)
+    Season.create(req.body, (err, season) => {
         res.status(201).json(season)
     })
 }
@@ -36,7 +34,7 @@ function update (req, res) {
 }
 
 function deleteOne (req, res) {
-    Season.findByIdAndDelete(req.params.id, (season) => {
+    Season.findByIdAndDelete(req.params.id, (err, season) => {
         res.status(200).json(season)
     })
 }
