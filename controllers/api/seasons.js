@@ -10,6 +10,7 @@ module.exports = {
 
 function index (req, res) {
     Season.find({}, (seasons) => {
+        console.log(seasons)
         res.status(200).json(seasons)
     })
 }
@@ -22,6 +23,7 @@ function show (req, res) {
 
 function create (req, res) {
     Season.create(req.body, (season) => {
+        console.log(season)
         res.status(201).json(season)
     })
 }
