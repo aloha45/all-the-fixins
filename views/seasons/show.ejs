@@ -1,5 +1,19 @@
 <%- include('../partials/header') %>
 
-
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Season Number</th>
+        <th>Winner</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= f.airline %></td>
+        <td><%= f.airport %></td>
+        <td><a href="/flights/<%= f._id %>">More Info Here</a></td>
+      </tr>
 
 <%- include('../partials/footer') %>

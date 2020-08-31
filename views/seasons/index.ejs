@@ -1,5 +1,24 @@
 <%- include('../partials/header') %>
     <h2>Worth playin' for?</h2>
     <h3>This is a season profile index page where you can see all seasons</h3>
+    <table id="list">
+        <thead>
+          <tr>
+            <th>Season</th>
+            <th>Air Date:</th>
+            <th>Season Details:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% seasons.forEach(function(s) { %>
+            <tr>
+              <td><%= s.name %></td>
+              <td><%= s.airDate %></td>
+              <td><a href="/seasons/<%= s._id %>">That's how you do it on survivor.</a> </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+
 
 <%- include('../partials/footer') %>

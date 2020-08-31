@@ -2,6 +2,10 @@ body {
   background-color: lightcyan
 }
 
+nav {
+  display: inline
+}
+
 .brand-logo {
   margin-left: 15px;
 }
@@ -10,12 +14,16 @@ body {
   margin-bottom: 10px;
 }
 
+#logo {
+  width: 500px;
+}
+
 #search-row form {
   padding-top: 20px;
 }
 
 #footer {
-  position: absolute;
+  position: relative;
   text-align: left;
   bottom: 0;
 }
