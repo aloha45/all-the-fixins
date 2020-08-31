@@ -14,3 +14,9 @@ body {
   padding-top: 20px;
 }
 
+#footer {
+  position: absolute;
+  text-align: left;
+  bottom: 0;
+}
+
