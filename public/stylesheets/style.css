@@ -3,7 +3,13 @@ body {
 }
 
 nav {
-  display: inline
+  display: inline;
+  font-size: 20px;
+}
+
+.nav-item:hover {
+  background-color: orange;
+  color: seashell
 }
 
 .brand-logo {

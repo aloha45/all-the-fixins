@@ -4,16 +4,17 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Season Number</th>
+        <th>Number</th>
         <th>Winner</th>
-        
+
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><%= f.airline %></td>
-        <td><%= f.airport %></td>
-        <td><a href="/flights/<%= f._id %>">More Info Here</a></td>
+        <td><%= season.name %></td>
+        <td><%= season.season %></td>
+        <td><%= season.winner %></td>
+
       </tr>
 
 <%- include('../partials/footer') %>

@@ -12,9 +12,8 @@ const seasonSchema = new Schema({
     memorableMoment: String,
     returningPlayers: String,
     seasonImg: String,
-
-    //messageBoard: [messageSchema]
-    //location: [locationSchema]
+    // messageBoard: [messageSchema],
+    // location: [locationSchema]
 }, {
     timestamps:true
 })
