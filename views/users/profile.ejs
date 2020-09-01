@@ -13,28 +13,28 @@
           <% } %>
         </ul>
         <div class="card-body">
-          <a href="/users/update" class="card-link">Finish Your Profile!</a>
+          <a href="/users/<%= user.id %>" class="card-link">Finish Your Profile!</a>
         </div>
       </div>
       <br>
       <h2>Change your profile</h2>
-      <form action="/users/profile?_method=PUT" method="POST">
+      <form action="/users/<%= user.id %>?_method=PUT" method="POST">
         <div class="form-group">
           <label for="exampleFormControlInput1">User Avatar Img Link:</label>
           <input type="text" name="avatar" value="<%= user.avatar %>" class="form-control" id="exampleFormControlInput1" placeholder="https://images2.minutemediacdn.com/image/fetch/w_736,h_485,c_fill,g_auto,f_auto/https%3A%2F%2Fsurvivingtribal.com%2Ffiles%2F2019%2F05%2Fsurvivor-logo-850x560.jpg">
         </div>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Choose your tribe:</label>
-          <select value="<%= user.tribe %>" class="form-control" id="exampleFormControlSelect1">
-            <option>Brains</option>
-            <option>Brawn</option>
-            <option>Beauty</option>
-            <option>Heroes</option>
-            <option>Villains</option>
-            <option>Healers</option>
-            <option>Hustlers</option>
-            <option>Davids</option>
-            <option>Goliaths</option>
+          <select name="tribe" value="<%= user.tribe %>" class="form-control" id="exampleFormControlSelect1">
+            <option value="Brains">Brains</option>
+            <option value="Brawn">Brawn</option>
+            <option value="Beauty">Beauty</option>
+            <option value="Heroes">Heroes</option>
+            <option value="Villains">Villains</option>
+            <option value="Healers">Healers</option>
+            <option value="Hustlers">Hustlers</option>
+            <option value="Davids">Davids</option>
+            <option value="Goliaths">Goliaths</option>
           </select>
           <br>
           <button type="submit" class="btn btn-info">Submit</button>

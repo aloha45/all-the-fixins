@@ -28,4 +28,7 @@ function update(req, res){
   .then(() => {
     res.redirect('/users/profile')
   })
+  .catch((err) => {
+    console.log(err)
+  })
 }
