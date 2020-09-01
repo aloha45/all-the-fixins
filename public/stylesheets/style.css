@@ -20,8 +20,14 @@ nav {
   margin-bottom: 10px;
 }
 
+.index {
+  margin: 0 auto;
+  justify-content: center;
+}
+
 #logo {
   width: 500px;
+  text-align: center;
 }
 
 #search-row form {
@@ -30,7 +36,7 @@ nav {
 
 #footer {
   position: relative;
-  text-align: left;
+  text-align: right;
   bottom: 0;
 }
 

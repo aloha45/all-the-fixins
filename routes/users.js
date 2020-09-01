@@ -4,6 +4,7 @@ const usersCtrl = require('../controllers/users');
 // GET /users
 router.get('/', usersCtrl.index);
 router.get('/profile', isLoggedIn, usersCtrl.show)
+router.put('/update', isLoggedIn, usersCtrl.update)
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();

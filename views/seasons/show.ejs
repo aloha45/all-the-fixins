@@ -1,20 +1,46 @@
 <%- include('../partials/header') %>
-
-<table>
+<img id="logo" src="<%= season.seasonImg %> ">
+<table class="table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Number</th>
-        <th>Winner</th>
-
+        <th scope="col">#</th>
+        <th scope="col">#</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><%= season.name %></td>
-        <td><%= season.season %></td>
-        <td><%= season.winner %></td>
-
+        <th scope="row">Name:</th>
+        <td><%= season.name  %></td>
       </tr>
+      <tr>
+        <th scope="row">Season #:</th>
+        <td><%= season.season  %></td>
+      </tr>
+      <tr>
+        <th scope="row">Winner</th>
+        <td><%= season.winner  %></td>
+      </tr>
+      <tr>
+        <th scope="row">Runner Up(s):</th>
+        <td><%= season.runnerUp  %></td>
+      </tr>
+      <tr>
+        <th scope="row">Final Jury Member:</th>
+        <td><%= season.finalJuryMember %></td>
+      </tr>
+      <tr>
+        <th scope="row">First Castaway Voted Out:</th>
+        <td><%= season.firstOneOut %></td>
+      </tr>
+      <tr>
+        <th scope="row">Air Date:</th>
+        <td><%= season.airDate %></td>
+      </tr>
+      <tr>
+        <th scope="row">Memorable Moments:</th>
+        <td><%= season.memorableMoment %></td>
+      </tr>
+    </tbody>
+  </table>
 
 <%- include('../partials/footer') %>

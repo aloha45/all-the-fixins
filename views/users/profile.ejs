@@ -1,5 +1,19 @@
 <%- include('../partials/header') %>
     <h2>Worth playin' for?</h2>
-    <h3>This is a user profile view page</h3>
-
+    <div class="card" style="width: 18rem;">
+        <img src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/' %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= user.name %></h5>
+          <p class="card-text"><%= user.email %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Member Since: <%= user.createdAt.toLocaleString() %></li>
+          <% if (user.tribe) { %>
+          <li class="list-group-item"><%= user.tribe %></li>
+          <% } %>
+        </ul>
+        <div class="card-body">
+          <a href="/users/update" class="card-link">Finish Your Profile!</a>
+        </div>
+      </div>
 <%- include('../partials/footer') %>
