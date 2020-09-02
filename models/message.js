@@ -13,6 +13,7 @@ const messageSchema = new Schema ({
     postedBy: String,
     avatar: String,
     title: String,
+    body: String,
     replies: [replySchema],
 }, {
     timestamps: true,
