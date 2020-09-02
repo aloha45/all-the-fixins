@@ -2,7 +2,8 @@ const Message = require('../models/message')
 
 module.exports = {
     index,
-    create
+    create,
+    show
 }
 
 function index (req, res) {
@@ -22,5 +23,16 @@ function create (req, res) {
     Message.create(req.body)
     .then(() => {
         res.redirect('/messages');
+    });
+}
+
+function show (req, res) {
+    Message.findById(req.params.id)
+    .then((message) => {
+        res.render('messages/show', {
+            title: 'Message Details',
+            user: req.user,
+            message
+        });
     });
 }

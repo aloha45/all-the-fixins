@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const replySchema = new Schema ({
     postedBy: String,
     avatar: String,
-    message: String
+    body: String
 }, {
     timestamps: true,
 })
