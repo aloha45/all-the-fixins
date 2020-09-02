@@ -64,6 +64,7 @@ function update (req, res) {
     res.render('messages/edit', {
         title: 'Edit Message',
         user: req.user,
-        id: req.params.id
+        id: req.params.id,
+        message: req.body,
     });
 };

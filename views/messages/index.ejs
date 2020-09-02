@@ -20,9 +20,10 @@
             <p><%= message.body %></p>
             <footer class="blockquote-footer"><%= message.postedBy %> at <cite title="Source Title"><%= message.createdAt.toLocaleTimeString() %></cite></footer>
           </blockquote>
+          <br>
+          <a href="/messages/<%= message._id %>" class="btn btn-primary">See More</a>
         </div>
     </div>
-        <a href="/messages/<%= message._id %>" class="btn btn-primary">See More</a>
 <% }) %> 
 
 <%- include('../partials/footer') %>
