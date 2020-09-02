@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+<h2>Dip your in torches and get fire</h2>
+
+<form action="/messages/<%= message.id %>?_method=PUT" method="POST">
+    <div class="form-group">
+      <input type="text" class="form-control" aria-describedby="message" name="title" placeholder="Enter message...">
+    </div>
+    <button type="submit" class="btn btn-success">Create Post</button>
+</form>
+
+<%- include('../partials/footer') %>

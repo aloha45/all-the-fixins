@@ -7,6 +7,7 @@ module.exports = {
     show,
     reply,
     delete: deleteMessage,
+    update
 }
 
 function index (req, res) {
@@ -56,5 +57,13 @@ function deleteMessage (req, res) {
     Message.findByIdAndDelete(req.params.id)
     .then(() => {
         res.redirect('/messages');
+    });
+};
+
+function update (req, res) {
+    res.render('messages/edit', {
+        title: 'Edit Message',
+        user: req.user,
+        id: req.params.id
     });
 };

@@ -11,6 +11,14 @@
       </blockquote>
     </div>
 </div>
+<% if (user.name === message.postedBy) { %>
+    <form action="/messages/<%= message.id %>?_method=DELETE" method="POST">
+        <button class="btn btn-warning" type="submit">Delete Message</button>
+    </form>
+    <form action="/messages/<%= message.id %>/edit">
+        <button class="btn btn-secondary" type="submit">Edit Message</button>
+    </form>
+<% } %>
 <br>
 <form action="/messages/<%= message._id %>" method="POST">
     <div class="form-group">
