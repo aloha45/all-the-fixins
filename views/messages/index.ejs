@@ -21,6 +21,11 @@
             <footer class="blockquote-footer"><%= message.postedBy %> at <cite title="Source Title"><%= message.createdAt.toLocaleTimeString() %></cite></footer>
           </blockquote>
         </div>
+        <% if (user.name === message.postedBy) { %>
+            <form action="/messages/<%= message.id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form>
+        <% } %>
         <a href="/messages/<%= message._id %>" class="btn btn-primary">See Post</a>
       </div>
 <% }) %> 

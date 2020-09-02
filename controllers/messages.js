@@ -1,10 +1,12 @@
-const Message = require('../models/message')
+const Message = require('../models/message');
+const { deleteOne } = require('../models/message');
 
 module.exports = {
     index,
     create,
     show,
-    reply
+    reply,
+    delete: deleteMessage,
 }
 
 function index (req, res) {
@@ -48,4 +50,11 @@ function reply (req, res) {
             res.redirect(`/messages/${req.params.id}`)
         });
     });
-}
+};
+
+function deleteMessage (req, res) {
+    Message.findByIdAndDelete(req.params.id)
+    .then(() => {
+        res.redirect('/messages');
+    });
+};
