@@ -15,8 +15,7 @@ function index(req, res) {
 
 function show (req, res) {
   User.findById(req.user._id)
-  .then((user) => {
-    console.log(user)
+  .then(() => {
     res.render('users/profile', { 
       title: 'User Profile', 
       user: req.user});
@@ -24,8 +23,8 @@ function show (req, res) {
 }
 
 function update(req, res){
-  console.log('this works')
   User.findByIdAndUpdate(req.params._id, req.body, { new: true})
+  console.log('this works')
   .then(() => {
     res.redirect('/users/profile')
   })
