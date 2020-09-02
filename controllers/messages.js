@@ -67,4 +67,5 @@ function update (req, res) {
         id: req.params.id,
         message: req.body,
     });
+    console.log(req.body)
 };
