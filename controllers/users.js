@@ -25,11 +25,8 @@ function show (req, res) {
 
 function update(req, res){
   console.log('this works')
-  User.findByIdAndUpdate(req.user._id, req.body, { new: true})
+  User.findByIdAndUpdate(req.params._id, req.body, { new: true})
   .then(() => {
     res.redirect('/users/profile')
-  })
-  .catch((err) => {
-    console.log(err)
   })
 }

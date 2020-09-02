@@ -23,12 +23,13 @@ const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const seasonsRouter = require('./routes/seasons');
 const apiRouter = require('./routes/api')
+const messagesRouter = require('./routes/messages')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(methodOverride("method"));
+app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(express.json());
@@ -49,6 +50,7 @@ app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/seasons', seasonsRouter);
 app.use('/api', apiRouter);
+app.use('/messages', messagesRouter);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
