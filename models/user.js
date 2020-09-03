@@ -7,7 +7,6 @@ var userSchema = new mongoose.Schema({
   avatar: String,
   googleId: String,
   tribe: String,
-  // flair: String,
   // favoriteSeason: String,
   allianceMembers: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 }, {

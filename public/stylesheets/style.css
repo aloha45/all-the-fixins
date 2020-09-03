@@ -1,5 +1,6 @@
 body {
-  background-color: lightcyan
+  background-color: lightcyan;
+  margin: 0 auto;
 }
 
 nav {
@@ -23,6 +24,10 @@ nav {
 .index {
   margin: 0 auto;
   justify-content: center;
+}
+
+.season-info:hover {
+  background-color: orange
 }
 
 #logo {

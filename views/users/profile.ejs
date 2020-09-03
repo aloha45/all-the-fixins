@@ -9,7 +9,7 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Castaway Since: <%= user.createdAt.toLocaleString().split(',')[0] %></li>
           <% if (user.tribe) { %>
-          <li class="list-group-item" id="userTribe"><%= user.tribe %></li>
+          <li class="list-group-item" id="userTribe">Tribe: <%= user.tribe %></li>
           <% } %>
           <% if (user.allianceMembers.length) { %>
             <li class="list-group-item" id="userAlliance">Alliance Members:<br>
