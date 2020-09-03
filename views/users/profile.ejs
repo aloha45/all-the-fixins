@@ -3,7 +3,7 @@
     <div class="card" style="width: 18rem;">
         <img src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/' %>" alt="User Profile Picture">
         <div class="card-body">
-          <h5 class="card-title"><%= user.name %></h5>
+          <h5 class="card-title"><%= user.name %> <span class="badge badge-secondary"><%= user.tribe %></span></h5>
           <p class="card-text"><%= user.email %></p>
         </div>
         <ul class="list-group list-group-flush">
@@ -11,7 +11,7 @@
           <% if (user.tribe) { %>
           <li class="list-group-item" id="userTribe"><%= user.tribe %></li>
           <% } %>
-          <% if (user.allianceMembers) { %>
+          <% if (user.allianceMembers.length) { %>
             <li class="list-group-item" id="userAlliance">Alliance Members:<br>
               <% user.allianceMembers.forEach(a => { %>
                 <a href="/users/<%= a._id %>"><%= a.name %></a><br>
@@ -22,7 +22,7 @@
       </div>
       <br>
       <h2>Change your profile</h2>
-      <form action="/users/profile?_method=PUT" method="POST">
+      <form action="/users/profile/<%= user._id %>?_method=PUT" method="POST">
         <div class="form-group">
           <label for="exampleFormControlInput1">User Avatar Img Link:</label>
           <input type="text" name="avatar" class="form-control" id="exampleFormControlInput1" value="<%= user.avatar %>">

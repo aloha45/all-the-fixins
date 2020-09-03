@@ -9,7 +9,7 @@
   <div class="card-header">
   </div>
   <div class="card-body">
-    <h5 class="card-title"><%= userInfo.name %></h5>
+    <h5 class="card-title"><%= userInfo.name %> <span class="badge badge-secondary"><%= userInfo.tribe %></h5>
     <p class="card-text">Castaway Since: <%= userInfo.createdAt.toLocaleString().split(',')[0] %></p>
     <p class="card-text">Email: <a href="mailto:<%= userInfo.email %>"><%= userInfo.email %></a></p>
     <% if (userInfo.allianceMembers.length) { %>

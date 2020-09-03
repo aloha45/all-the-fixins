@@ -16,6 +16,7 @@ function index(req, res) {
 }
 
 function showProfile (req, res) {
+  console.log(req.user)
   User.findById(req.user._id).populate('allianceMembers')
   .then((user) => {
     res.render('users/profile', { 
@@ -25,11 +26,8 @@ function showProfile (req, res) {
 }
 
 function update(req, res){
-  User.findByIdAndUpdate(req.params._id, req.body, { new: true}).then(() => {
-    res.render('users/profile', {
-      result,
-      user: req.user,
-      title: 'Castaway Details'})
+  User.findByIdAndUpdate(req.params.id, req.body, { new: true}).then((result) => {
+    res.redirect('/users/profile')
   })
 }
 

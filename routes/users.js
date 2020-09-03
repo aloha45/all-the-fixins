@@ -5,7 +5,7 @@ const usersCtrl = require('../controllers/users');
 router.get('/', usersCtrl.index);
 router.get('/profile', isLoggedIn, usersCtrl.showProfile);
 router.get('/:id', isLoggedIn, usersCtrl.show);
-router.put('/profile', isLoggedIn, usersCtrl.update);
+router.put('/profile/:id', isLoggedIn, usersCtrl.update);
 router.get('/:id/alliance', isLoggedIn, usersCtrl.alliance)
 router.get('/:id/betray', isLoggedIn, usersCtrl.betray)
 
