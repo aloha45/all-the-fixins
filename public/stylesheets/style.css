@@ -4,6 +4,7 @@ body {
 
 main {
   text-align: center;
+  justify-content: center;
 }
 
 nav {
@@ -46,5 +47,9 @@ nav {
   position: relative;
   text-align: right;
   bottom: 0;
+}
+
+#postMessage {
+  text-align:left;
 }
 

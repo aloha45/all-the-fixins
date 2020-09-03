@@ -6,7 +6,7 @@ router.post('/', isLoggedIn, messagesCtrl.create);
 router.get('/:id', isLoggedIn, messagesCtrl.show);
 router.post('/:id', isLoggedIn, messagesCtrl.reply);
 router.delete('/:id', isLoggedIn, messagesCtrl.delete);
-router.get('/:id/edit', isLoggedIn, messagesCtrl.update)
+router.put('/:id', isLoggedIn, messagesCtrl.update)
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();

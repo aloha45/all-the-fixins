@@ -1,33 +1,40 @@
 <%- include('../partials/header') %>
 
-<div class="card">
-    <div class="card-header" name="title">
-      <%= message.title %>
-    </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p><%= message.body %></p>
-        <footer class="blockquote-footer"><%= message.postedBy %> at <cite title="Source Title"><%= message.createdAt.toLocaleTimeString() %></cite></footer>
-      </blockquote>
-    </div>
-</div>
 <% if (user.name === message.postedBy) { %>
+    <form action="/messages/<%= message._id %>?_method=PUT" method="POST">
+        <div class="form-group">
+            <label>Message Title:</label>
+            <input type= "text" class="form-control" id="exampleFormControlTextarea1" rows="1" name="title" value="<%= message.title %>"></textarea>
+            <label for="exampleFormControlTextarea1">Edit Your Message:</label>
+            <input type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" name= "body" value="<%= message.body %>"></textarea>
+        </div>
+        <button type="submit" class="btn btn-info">Edit Message</button>
+    </form>
     <form action="/messages/<%= message.id %>?_method=DELETE" method="POST">
         <button class="btn btn-warning" type="submit">Delete Message</button>
     </form>
-    <form action="/messages/<%= message.id %>/edit">
-        <button class="btn btn-secondary" type="submit">Edit Message</button>
-    </form>
-<% } %>
-<br>
-<form action="/messages/<%= message._id %>" method="POST">
-    <div class="form-group">
+    <% } else {%>
+    <div class="card">
+        <div class="card-header" name="title">
+          <%= message.title %>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p><%= message.body %></p>
+            <footer class="blockquote-footer"><%= message.postedBy %> at <cite title="Source Title"><%= message.createdAt.toLocaleTimeString() %></cite></footer>
+          </blockquote>
+        </div>
+    </div>
+    <br>
+    <form action="/messages/<%= message._id %>" method="POST">
+        <div class="form-group">
       <label for="exampleInputEmail1">Reply:</label>
       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="body">
       <small id="emailHelp" class="form-text text-muted">What do you think?</small>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+<% } %> 
 <br>
 <br>
 <% message.replies.forEach(r => { %>
@@ -35,7 +42,7 @@
         <div class="card-body">
           <blockquote class="blockquote mb-0">
             <p><%= r.body %></p>
-            <footer class="blockquote-footer"><%= r.postedBy %>> <cite title="Source Title"><%= r.createdAt.toLocaleTimeString() %></cite></footer>
+            <footer class="blockquote-footer"><%= r.postedBy %> at <cite title="Source Title"><%= r.createdAt.toLocaleTimeString() %></cite></footer>
           </blockquote>
         </div>
       </div>

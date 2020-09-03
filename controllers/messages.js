@@ -1,5 +1,4 @@
 const Message = require('../models/message');
-const { deleteOne } = require('../models/message');
 
 module.exports = {
     index,
@@ -7,7 +6,7 @@ module.exports = {
     show,
     reply,
     delete: deleteMessage,
-    update
+    update,
 }
 
 function index (req, res) {
@@ -61,11 +60,12 @@ function deleteMessage (req, res) {
 };
 
 function update (req, res) {
-    res.render('messages/edit', {
-        title: 'Edit Message',
-        user: req.user,
-        id: req.params.id,
-        message: req.body,
-    });
-    console.log(req.body)
+    Message.findByIdAndUpdate(req.params.id, req.body, { new: true}).then(() => {
+        res.redirect('/messages')
+      })
+    // res.render('messages/edit', {
+    //     title: 'Edit Message',
+    //     user: req.user,
+    //     id: req.params.id,
+    //     message: req.body,;
 };
