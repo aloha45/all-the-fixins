@@ -8,7 +8,7 @@ var userSchema = new mongoose.Schema({
   googleId: String,
   tribe: String,
   // flair: String,
-  favoriteSeason: String,
+  // favoriteSeason: String,
   allianceMembers: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 }, {
   timestamps: true

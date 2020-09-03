@@ -2,31 +2,58 @@ const User = require('../models/user');
 
 module.exports = {
   index,
+  showProfile,
+  update,
   show,
-  update
+  alliance,
+  betray
 };
 
 function index(req, res) {
-  User.find({})
-  .then(users => {
+  User.find({}).then(users => {
     res.render('users/index', { title: 'User Index', user: req.user, users })
   })
 }
 
-function show (req, res) {
-  console.log(req.user)
-  User.findById(req.user._id)
-  .then(() => {
+function showProfile (req, res) {
+  User.findById(req.user._id).populate('allianceMembers')
+  .then((user) => {
     res.render('users/profile', { 
       title: 'User Profile', 
-      user: req.user});
+      user});
   })
 }
 
 function update(req, res){
-  User.findByIdAndUpdate(req.params._id, req.body, { new: true})
-  console.log('this works')
-  .then(() => {
-    res.redirect('/users/profile')
+  User.findByIdAndUpdate(req.params._id, req.body, { new: true}).then((result) => {
+    res.render('users/profile', {
+      result,
+      user: req.user,
+      title: 'Castaway Details'})
+  })
+}
+
+function show(req, res){
+  User.findById(req.params.id).then((userInfo) => {
+    res.render('users/show', {
+      title: 'Castaway Details',
+      userInfo,
+      user: req.user
+    })
+  })
+}
+
+function alliance(req, res) {
+  req.user.allianceMembers.push(req.params.id);
+  req.user.save().then(() => {
+    res.redirect(`/users/${req.params.id}`);
+  });
+}
+
+function betray(req, res) {
+  let idx = req.user.allianceMembers.indexOf(req.params.id);
+  req.user.allianceMembers.splice(idx, 1);
+  req.user.save().then(() => {
+    res.redirect(`/users/${req.params.id}`)
   })
 }
