@@ -1,8 +1,7 @@
 <%- include('../partials/header') %>
 
-<h2>You are going to have to dig deep</h2>
-
 <h3><%= title %></h3>
+<h5>You are going to have to dig deep</h5>
 
 <div class="card" style="width: 18rem;">
   <img id="avatarPhoto" style="height: 18rem;" class="card-img-top" src="<%= userInfo.avatar ? userInfo.avatar : 'http://theoldreader.com/kittens/300/300/'  %>" alt="Card image cap">
@@ -13,7 +12,10 @@
     <p class="card-text">Castaway Since: <%= userInfo.createdAt.toLocaleString().split(',')[0] %></p>
     <p class="card-text">Email: <a href="mailto:<%= userInfo.email %>"><%= userInfo.email %></a></p>
     <% if (userInfo.allianceMembers.length) { %>
-    <p class="card-text">Alliance Members: <%= userInfo.allianceMembers %></p>
+    <p class="card-text">Alliance Members: </p>
+        <% userInfo.allianceMembers.forEach(a => { %>
+            <a href="/users/<%= a._id %>"><%= a.name %></a><br>
+            <% }) %>
     <!-- This is where we'll iterate over the games with a forEach -->
     <!-- This is where we'll render buttons to add/remove a user as a friend -->
     <% } %>
