@@ -7,9 +7,10 @@
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Castaway Since: <%= user.createdAt.toLocaleString().split(',')[0] %></li>
-          <% if (user.tribe) { %>
-          <li class="list-group-item" id="userTribe">Tribe: <%= user.tribe %></li>
-          <% } %>
+          <% if (user.favoriteSeason) { %>
+            <li class="list-group-item" id="userSeason">Favorite Season:<br>
+                <a href="/seasons"><%= user.favoriteSeason %></a><br>
+                <% } %>
           <% if (user.allianceMembers.length) { %>
             <li class="list-group-item" id="userAlliance">Alliance Members:<br>
               <% user.allianceMembers.forEach(a => { %>
@@ -27,6 +28,51 @@
           <input type="text" name="avatar" class="form-control" id="exampleFormControlInput1" value="<%= user.avatar %>">
         </div>
         <div class="form-group">
+          <label for="exampleFormControlSelect1">Choose your favorite season:</label>
+          <select name="favoriteSeason" class="form-control" id="exampleFormControlSelect1">
+            <option value="Borneo">Borneo</option>
+            <option value="The Austrailian Outback">The Australian Outback</option>
+            <option value="Africa">Africa</option>
+            <option value="Marquesas">Marquesas</option>
+            <option value="Thailand">Thailand</option>
+            <option value="The Amazon">The Amazon</option>
+            <option value="Pearl Islands">Pearl Islands</option>
+            <option value="All-Stars">All-Stars</option>
+            <option value="Vanuatu">Vanuatu</option>
+            <option value="Palau">Palau</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Panama">Panama</option>
+            <option value="Cook Islands">Cook Islands</option>
+            <option value="Fiji">Fiji</option>
+            <option value="China">China</option>
+            <option value="Micronesia">Micronesia</option>
+            <option value="Gabon">Gabon</option>
+            <option value="Tocantins">Tocantins</option>
+            <option value="Samoa">Samoa</option>
+            <option value="Heroes vs. Villains">Heroes vs. Villains</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Redemption Island">Redemption Island</option>
+            <option value="South Pacific">South Pacific</option>
+            <option value="One World">One World</option>
+            <option value="Phillipines">Phillipines</option>
+            <option value="Caramoan">Caramoan</option>
+            <option value="Blood vs Water">Blood vs. Water</option>
+            <option value="Cagayan">Cagayan</option>
+            <option value="San Juan Del Sur">San Juan Del Sur</option>
+            <option value="Worlds Apart">Worlds Apart</option>
+            <option value="Cambodia">Cambodia</option>
+            <option value="Kaoh Rong">Kaoh Rong</option>
+            <option value="Millenials vs. Gen X">Millenials vs. Gen X</option>
+            <option value="Game Changers">Game Changers</option>
+            <option value="Heroes vs Healers vs Hustlers">HvHvH</option>
+            <option value="Ghost Island">Ghost Island</option>
+            <option value="David vs Goliath">David vs Goliath</option>
+            <option value="Edge of Extinction">Edge of Extinction</option>
+            <option value="Island of the Idols">Island of the Idols</option>
+            <option value="Winners at War">Winners at War</option>
+          </select>
+        </div>
+        <div class="form-group">
           <label for="exampleFormControlSelect1">Choose your tribe:</label>
           <select name="tribe" class="form-control" id="exampleFormControlSelect1">
             <option value="Brains">Brains</option>
@@ -34,11 +80,14 @@
             <option value="Beauty">Beauty</option>
             <option value="Heroes">Heroes</option>
             <option value="Villains">Villains</option>
+            <option value="Millenials">Millenials</option>
+            <option value="Gen X">Gen X</option>            
             <option value="Healers">Healers</option>
             <option value="Hustlers">Hustlers</option>
-            <option value="Davids">Davids</option>
-            <option value="Goliaths">Goliaths</option>
+            <option value="David">David</option>
+            <option value="Goliath">Goliath</option>
           </select>
+        </div>
           <br>
           <button type="submit" class="btn btn-info">Submit</button>
         </form>
