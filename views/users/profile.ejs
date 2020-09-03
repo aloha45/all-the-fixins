@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
     <h2>Worth playin' for?</h2>
     <div class="card" style="width: 18rem;">
-        <img src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/' %>" alt="Card image cap">
+        <img src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/' %>" alt="User Profile Picture">
         <div class="card-body">
           <h5 class="card-title"><%= user.name %></h5>
           <p class="card-text"><%= user.email %></p>
@@ -12,10 +12,11 @@
           <li class="list-group-item" id="userTribe"><%= user.tribe %></li>
           <% } %>
           <% if (user.allianceMembers) { %>
-            <% user.allianceMembers.forEach(a => { %>
-              <li class="list-group-item" id="userTribe">
-                <a href="/users/<%= a._id %>"><img width="30" id="avatarPhoto" src="<%= a.avatar %>" alt=""><%= a.name %> </a><br><br></li>
-            <% }) %>
+            <li class="list-group-item" id="userAlliance">
+              <% user.allianceMembers.forEach(a => { %>
+                <a href="/users/<%= a._id %>"><%= a.name %> </a><br>
+                <% }) %>
+              </li>
           <% } %>
         </ul>
       </div>
