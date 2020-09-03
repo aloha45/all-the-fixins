@@ -25,7 +25,7 @@ function showProfile (req, res) {
 }
 
 function update(req, res){
-  User.findByIdAndUpdate(req.params._id, req.body, { new: true}).then((result) => {
+  User.findByIdAndUpdate(req.params._id, req.body, { new: true}).then(() => {
     res.render('users/profile', {
       result,
       user: req.user,
@@ -34,7 +34,8 @@ function update(req, res){
 }
 
 function show(req, res){
-  User.findById(req.params.id).then((userInfo) => {
+  User.findById(req.params.id).populate('allianceMembers')
+  .then((userInfo) => {
     res.render('users/show', {
       title: 'Castaway Details',
       userInfo,

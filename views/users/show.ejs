@@ -10,11 +10,13 @@
   </div>
   <div class="card-body">
     <h5 class="card-title"><%= userInfo.name %></h5>
-    <p class="card-text">Joined: <%= userInfo.createdAt.toLocaleString().split(',')[0] %></p>
+    <p class="card-text">Castaway Since: <%= userInfo.createdAt.toLocaleString().split(',')[0] %></p>
     <p class="card-text">Email: <a href="mailto:<%= userInfo.email %>"><%= userInfo.email %></a></p>
-    <p class="card-text">Alliance Members:</p>
+    <% if (userInfo.allianceMembers.length) { %>
+    <p class="card-text">Alliance Members: <%= userInfo.allianceMembers %></p>
     <!-- This is where we'll iterate over the games with a forEach -->
     <!-- This is where we'll render buttons to add/remove a user as a friend -->
+    <% } %>
     <% if (!userInfo._id.equals(user._id) && !user.allianceMembers.includes(userInfo._id)) { %>
         <a href="/users/<%= userInfo._id %>/alliance" class="btn btn-warning">Join Alliance</a>
       <% } %>

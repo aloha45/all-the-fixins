@@ -7,14 +7,14 @@
           <p class="card-text"><%= user.email %></p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Member Since: <%= user.createdAt.toLocaleString().split(',')[0] %></li>
+          <li class="list-group-item">Castaway Since: <%= user.createdAt.toLocaleString().split(',')[0] %></li>
           <% if (user.tribe) { %>
           <li class="list-group-item" id="userTribe"><%= user.tribe %></li>
           <% } %>
           <% if (user.allianceMembers) { %>
-            <li class="list-group-item" id="userAlliance">
+            <li class="list-group-item" id="userAlliance">Alliance Members:<br>
               <% user.allianceMembers.forEach(a => { %>
-                <a href="/users/<%= a._id %>"><%= a.name %> </a><br>
+                <a href="/users/<%= a._id %>"><%= a.name %></a><br>
                 <% }) %>
               </li>
           <% } %>
