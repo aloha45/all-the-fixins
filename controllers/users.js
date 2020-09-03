@@ -14,6 +14,7 @@ function index(req, res) {
 }
 
 function show (req, res) {
+  console.log(req.user)
   User.findById(req.user._id)
   .then(() => {
     res.render('users/profile', { 

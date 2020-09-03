@@ -9,10 +9,10 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Member Since: <%= user.createdAt.toLocaleString() %></li>
           <% if (user.tribe) { %>
-          <li class="list-group-item"><%= user.tribe %></li>
+          <li class="list-group-item" id="userTribe"><%= user.tribe %></li>
           <% } %>
           <% if (user.allianceMembers) { %>
-            <li class="list-group-item"><%= user.tribe %></li>
+            <li class="list-group-item" id="userAlliance"><%= user.tribe %></li>
           <% } %>
         </ul>
       </div>
