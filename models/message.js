@@ -5,6 +5,7 @@ const replySchema = new Schema ({
     postedBy: String,
     avatar: String,
     body: String,
+    flair: String,
 }, {
     timestamps: true,
 })
