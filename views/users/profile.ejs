@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
     <div class="card" style="width: 18rem;">
-        <img src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/' %>" alt="User Profile Picture">
+        <img id="profilePic" src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/' %>" alt="User Profile Picture">
         <div class="card-body">
-          <h5 class="card-title"><%= user.name %> <span class="badge badge-secondary"><%= user.tribe %></span></h5>
+          <h5 class="card-title"><%= user.name %> <span class="badge badge-warning"><%= user.tribe %></span></h5>
           <p class="card-text"><%= user.email %></p>
         </div>
         <ul class="list-group list-group-flush">
