@@ -65,3 +65,4 @@ There are a number of goals for expansion of the application:
 - Expand API database to include location information. Add in a map of the world, with countries that can be clicked on to render information about seasons played in the country. Fiji, the Phillipines, Nicaragua, Samoa, and others have been used multiple times!
 - Enable more mobility within the website to make it less nav-bar reliant for navigation.
 - Have flair change color depending on which tribe a user has marked themselves with.
+- Improve Ancient Voice to render info about the season it is coming from.
