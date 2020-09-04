@@ -41,13 +41,21 @@ I started watching Survivor in 2018 as background noise while I worked on other 
 
 Upon entering the website, you are met by a landing page:
 
+![Landing Page](public/images/readme/landing.png)
+
 When entering the site, you are prompted to log-in via Google OAuth.
 
 Fill out your profile! You can include your favorite season, change your avatar image, and pick a Tribal Flair!
 
+![Profile](public/images/readme/profile.png)
+
 Brush up on your survivor knowledge with the Season Database, which includes information on each of the 40 seasons of Survivor.
 
+![Season Index](public/images/readme/seasons.png)
+
 Check out Tree Mail! See what people are talking about around camp and offer some quips of your own. You can create Tree Mail, edit or delete it, and reply to others'. Spend a lot of time here so you can flex your Social Game and add people to your alliance. 
+
+![Tree Mail](public/images/readme/TreeMail.png)
 
 # Moving Forward
 
