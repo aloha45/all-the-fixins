@@ -13,12 +13,12 @@
 <% messages.forEach(message => { %>
     <div class="card">
         <div class="card-header" name="title">
-          <%= message.title %>
+          <%= message.postedBy %> <span class="badge badge-secondary"><%= message.flair %></span>
         </div>
         <div class="card-body">
           <blockquote class="blockquote mb-0">
-            <p><%= message.body %></p>
-            <footer class="blockquote-footer"><%= message.postedBy %> <cite title="Source Title"><%= message.createdAt.toLocaleTimeString() %></cite></footer>
+            <p><%= message.title %></p>
+            <footer class="blockquote-footer"><%= message.body %><br>at <cite title="Source Title"><%= message.createdAt.toLocaleTimeString() %></cite></footer>
           </blockquote>
           <br>
           <a href="/messages/<%= message._id %>" class="btn btn-primary">See More</a>

@@ -23,6 +23,7 @@ function index (req, res) {
 function create (req, res) {
     req.body.postedBy = req.user.name;
     req.body.avatar = req.user.avatar;
+    req.body.flair = req.user.tribe;
     Message.create(req.body)
     .then(() => {
         res.redirect('/messages');
@@ -45,6 +46,7 @@ function reply (req, res) {
     .then((message) => {
         req.body.postedBy = req.user.name;
         req.body.avatar = req.user.avatar;
+        req.body.flair = req.user.tribe;
         message.replies.push(req.body);
         message.save().then(() => {
             res.redirect(`/messages/${req.params.id}`)
