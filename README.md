@@ -6,6 +6,8 @@ Come on in guys! All-the-fixins is a Survivor fan page dedicated to tracking sea
 
 I started watching Survivor in 2018 as background noise while I worked on other projects. About halfway through The Austrailian Outback, I was hooked and I binged the whole series in a year and a half. Some seasons I have seen multiple times, and I love the characters so much: the strategy and the way that the personality of each season changes, and how the meta of the game of Survivor constantly gets analyzed and then shaken up. Putting information into the API was exhaustive and took three nights, but I never got tired of it because I love the show. 
 
+[Check out All-the-Fixins here!](https://survivor-database.herokuapp.com/)
+
 # Planning
 
 [Github](https://github.com/aloha45/all-the-fixins)
