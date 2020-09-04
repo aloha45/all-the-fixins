@@ -10,6 +10,8 @@
     <button type="submit" class="btn btn-info">Submit</button>
 </form>
 
+<h2>Messages</h2>
+
 <% messages.forEach(message => { %>
     <div class="card">
         <div class="card-header" name="title">
@@ -21,7 +23,7 @@
             <footer class="blockquote-footer"><%= message.body %><br>at <cite title="Source Title"><%= message.createdAt.toLocaleTimeString() %></cite></footer>
           </blockquote>
           <br>
-          <a href="/messages/<%= message._id %>" class="btn btn-primary">See More</a>
+          <a href="/messages/<%= message._id %>" class="btn btn-warning">See More</a>
         </div>
     </div>
 <% }) %> 

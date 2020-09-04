@@ -20,6 +20,10 @@ h1 {
   font-family: 'Shojumaru', cursive;
 }
 
+h2 {
+  font-family: 'Shojumaru', cursive;
+}
+
 h3 {
   font-family: 'Shojumaru', cursive;
 }
@@ -59,6 +63,7 @@ nav {
   justify-self: auto;
   display: absolute;
   flex-direction: row;
+  font-size: 36px;
 }
 
 .index {
@@ -67,11 +72,15 @@ nav {
 }
 
 .season-info:hover {
-  background-color: rgb(252, 182, 53)
+  background-color: orange;
+  color: navy
 }
 
 #avatarPhoto {
+  max-width: 300px;
   border-radius: 50%;
+  display: flex;
+  margin: 10px 10px;
 }
 
 #logo {
@@ -100,10 +109,9 @@ nav {
 
 #profilePic {
   max-width: 300px;
-  text-align: center;
   border-radius: 50%;
   display: flex;
-  margin: 10px 10px;
+  margin: 10px 10px 10px 50px;
 }
 
 .card-title {
@@ -112,4 +120,12 @@ nav {
 
 #castawayMain {
   flex-direction: row;
+}
+
+#castawayShow {
+  flex-direction: row;
+}
+
+#seasonDetails:hover {
+  color: blue
 }

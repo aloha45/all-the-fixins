@@ -1,13 +1,11 @@
 <%- include('../partials/header') %>
 
-<h3><%= title %></h3>
-
-<div class="card" style="width: 25rem;">
+<div class="card" id="castawayShow">
   <img id="avatarPhoto" style="height: 18rem;" class="card-img-top" src="<%= userInfo.avatar ? userInfo.avatar : 'http://theoldreader.com/kittens/300/300/'  %>" alt="Card image cap">
   <div class="card-header">
   </div>
   <div class="card-body">
-    <h5 class="card-title"><%= userInfo.name %> <span class="badge badge-secondary"><%= userInfo.tribe %></h5>
+    <h5 class="card-title"><%= userInfo.name %> <br><span class="badge badge-secondary"><%= userInfo.tribe %></h5>
     <p class="card-text">Castaway Since: <%= userInfo.createdAt.toLocaleString().split(',')[0] %></p>
     <p class="card-text">Email: <a href="mailto:<%= userInfo.email %>"><%= userInfo.email %></a></p>
     <% if (userInfo.allianceMembers.length) { %>

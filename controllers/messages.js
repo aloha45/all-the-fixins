@@ -13,7 +13,7 @@ function index (req, res) {
     Message.find({})
     .then ((messages) => {
         res.render("messages/index", {
-            title: "Message Board",
+            title: "Tree Mail",
             user: req.user, 
             messages: messages.reverse()
         })

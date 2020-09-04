@@ -2,7 +2,7 @@
     <div class="card" id="castawayMain">
         <img id="profilePic" src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/' %>" alt="User Profile Picture">
         <div class="card-body">
-          <h5 class="card-title"><%= user.name %> <span class="badge badge-warning"><%= user.tribe %></span></h5>
+          <h5 class="card-title"><br><%= user.name %> <br><span class="badge badge-success"><%= user.tribe %></span></h5>
           <p class="card-text"><%= user.email %></p>
         </div>
         <ul class="list-group list-group-flush">
@@ -89,7 +89,7 @@
           </select>
         </div>
           <br>
-          <button type="submit" class="btn btn-info">Submit</button>
+          <button type="submit" class="btn btn-warning">Submit</button>
         </form>
         </div>
 <%- include('../partials/footer') %>
