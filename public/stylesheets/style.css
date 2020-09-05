@@ -51,7 +51,8 @@ nav {
 }
 
 .nav {
-  background-color: orange
+  background-color: orange;
+  border-bottom-style: 5px, solid, white;
 }
 
 .brand-logo {
